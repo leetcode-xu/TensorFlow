@@ -56,7 +56,7 @@ def mpg_test(filename='/home/jimao/PycharmProjects/tensorflow/data/auto-mpg.data
     # 打印网络信息
     model.summary()
     train_db = data.Dataset.from_tensor_slices((train_datas.values, train_lables.values))
-    train_db = train_db.shuffle(100).batch(32)
+    train_db = train_db.shuffle(100).batch(2)
     optimzer = keras.optimizers.RMSprop(.001)
     for epoch in range(200):
         for step, (x, y) in enumerate(train_db):
